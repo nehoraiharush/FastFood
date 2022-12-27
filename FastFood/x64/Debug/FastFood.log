@@ -1,4 +1,4 @@
 ﻿  Driver.cpp
-C:\Users\nehor\Desktop\FastFood\FastFood\Customer.h(15,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\nehor\Desktop\FastFood\FastFood\Driver.cpp(6,13): warning C4326: return type of 'main' should be 'int' instead of 'void'
+C:\Users\nehor\Desktop\FastFood\FastFood\Customer.h(18,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\nehor\Desktop\FastFood\FastFood\Driver.cpp(8,13): warning C4326: return type of 'main' should be 'int' instead of 'void'
   FastFood.vcxproj -> C:\Users\nehor\Desktop\FastFood\x64\Debug\FastFood.exe
