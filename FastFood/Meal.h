@@ -13,6 +13,9 @@ private:
 public:
 	int id_counter = 0;
 	Meal(string inp_name, double price): id(++id_counter), name(inp_name), price(price), totalOrders(0){}
-
+	string getName() { return name; }
+	double getPrice() { return price; }
+	void setTotalOrders(int numOfOrders) { totalOrders = numOfOrders; }
+	int getTotalOrders() { return totalOrders; }
 
 };

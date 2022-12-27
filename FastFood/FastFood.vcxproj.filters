@@ -24,7 +24,7 @@
     <ClInclude Include="Meal.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="OrdersBoard.h">
+    <ClInclude Include="Order.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Waiter.h">

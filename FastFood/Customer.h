@@ -8,17 +8,13 @@ using namespace std;
 class Customer
 {
 private:
+	static int id_counter;
+	int id;
 	int sleep;
 	int readMenu;
 
 public:
-	Customer()
-	{
-		cout << "Default ctor" << endl;
-		srand(time(0));
-		sleep = rand() % 3 + 4;
-		readMenu = 1;
-	}
-	~Customer() { cout << "\nDtor"; }
-	int getSleep() { return sleep; }
+	Customer();
+	~Customer();
+	int getSleep();
 };
