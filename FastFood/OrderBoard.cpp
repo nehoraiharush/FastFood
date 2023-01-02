@@ -18,7 +18,7 @@ void Orderboard::orderMeal(int customerId, int mealId, int amount) {
 }
 
 bool Orderboard::hasUnFinishedOrders() {
-	cout << orders.size() << endl;
+	
 	for (Order order : orders) {
 		if (!order.isFinished())
 			return true;

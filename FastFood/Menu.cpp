@@ -18,7 +18,7 @@ Menu::Menu(int num_of_meals) {
 		cout << "Error: There aren't enough meals only up to 7" << endl;
 		exit(EXIT_FAILURE);
 	}
-	numOfMeals = num_of_meals;
+	this->numOfMeals = num_of_meals;
 	
 	for (int i = 0; i < numOfMeals; i++) {
 		requeiredMeals.push_back(allMeals[i]);

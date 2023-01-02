@@ -20,6 +20,7 @@ private:
 	Orderboard& orderboard;
 	Menu& menu;
 	void tryOrder();
+
 public:
 	Customer(binary_semaphore&, Timer&, Orderboard&, Menu&);
 	~Customer();

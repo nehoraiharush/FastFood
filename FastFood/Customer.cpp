@@ -13,27 +13,30 @@ Customer::Customer(binary_semaphore& orderSemaphore, Timer& timer, Orderboard& o
 		cout << "Error: Number of customers can only be up to 10" << endl;
 		exit(EXIT_FAILURE);
 	}
+	srand(time(NULL));
 }
 
 Customer::~Customer() {}
 
 void Customer::start(binary_semaphore& sp) {
 	while (timer.isRunning()) {
+		//cout << "Customer: " << id << endl;
 		sp.acquire();
-		if (orderboard.canOrder(id))
+		if (orderboard.canOrder(id)) {
 			tryOrder();
+		}
 		sp.release();
-		sleep_for(milliseconds(rand() % 3000 + 3000));
+		sleep_for(milliseconds(rand() % 4000 + 3000));
 	}
 }
 
 void Customer::tryOrder() {
-	random_device rd;
-	mt19937 mt(rd());
-	uniform_int_distribution<int> randBool(0, 1), randMeal(0, menu.getNumOfMeals() - 1), randAmount(1, 4);
-	int mealId = randMeal(mt);
-	int amount = randAmount(mt);
-	bool wantToOrder(randBool(mt));
+	
+	cout << "HHH" << endl;
+	int mealId = rand() % menu.getNumOfMeals();
+	int amount = rand() % 4 + 1;
+	bool wantToOrder = rand() % 2;
+	cout << menu.getNumOfMeals() << rand() % menu.getNumOfMeals() << " " << rand() % 4 + 1 << " " << rand() % 2 << endl;
 	cout << timer.getTime() << ": Customer " << id << " reads a menu about " << menu.getMeals()[mealId].getName();
 	if (wantToOrder) {
 		orderboard.orderMeal(id, mealId, amount);

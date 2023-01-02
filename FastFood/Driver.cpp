@@ -17,18 +17,20 @@ int main() {
     
     for (int i = 0; i < 2; i++) 
         vec_w[i] = new Waiter(bs, orderboard, timer, menu);
+
+    for (int i = 0; i < 6; i++)
+        delete vec_c[i];
+    delete[] vec_c;
+    for (int i = 0; i < 2; i++)
+        delete vec_w[i];
+    delete[] vec_w;
     
     cout << timer.getTime() << ": End" << endl;
     menu.print();
     cout << "Total price: " << orderboard.getTotalPrice() << "$." << endl;
     cout << "Total amount: " << orderboard.getAmount() << " orders." << endl;
 
-    for (int i = 0; i < 6; i++)
-        delete vec_c[i];
-    delete[] vec_c;
-    for (int i = 0; i < 2; i++) 
-        delete vec_w[i];
-    delete[] vec_w;
+    
     
 
 }
