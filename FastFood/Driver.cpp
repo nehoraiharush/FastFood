@@ -6,13 +6,19 @@
 using namespace std;
 
 void main() {
-	Customer c;
-	cout << c.getSleep();
+	Menu menu(5);
+	menu.print();
+	Timer timer(5);
+	Orderboard orderboard(menu);
 	binary_semaphore b(1);
 	thread a([&b]() {
 		b.acquire();
 		cout << "H" << endl;
 		b.release();
-	});
+		});
+	Customer c(b,timer,orderboard,menu);
+	cout << c.getSleep();
+	
 	a.join();
+	
 }

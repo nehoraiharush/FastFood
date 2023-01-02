@@ -11,11 +11,13 @@ private:
 	int totalOrders;
 
 public:
-	int id_counter = 0;
-	Meal(string inp_name, double price): id(++id_counter), name(inp_name), price(price), totalOrders(0){}
-	string getName() { return name; }
-	double getPrice() { return price; }
+	Meal(string inp_name, double price): id(id_counter++), name(inp_name), price(price), totalOrders(0){}
+	Meal(const Meal& obj) : name(obj.name), price(obj.price), totalOrders(obj.totalOrders) {}
+	~Meal() { cout << "Dtor" << endl; }
+	string getName() const { return name; }
+	double getPrice() const { return price; }
 	void setTotalOrders(int numOfOrders) { totalOrders = numOfOrders; }
-	int getTotalOrders() { return totalOrders; }
+	int getTotalOrders() const { return totalOrders; }
+	void addOrders(int orders) { totalOrders += orders; }
 
 };

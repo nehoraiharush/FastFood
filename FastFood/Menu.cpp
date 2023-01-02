@@ -14,10 +14,20 @@ Meal Menu::allMeals[7] = {
 };
 
 Menu::Menu(int num_of_meals) {
+	if (num_of_meals > 7) {
+		cout << "Error: There aren't enough meals only up to 7" << endl;
+		return;
+	}
 	numOfMeals = num_of_meals;
 	
 	for (int i = 0; i < numOfMeals; i++) {
 		requeiredMeals.push_back(allMeals[i]);
+	}	
+}
+
+void Menu::print() const{
+	for (int i = 0; i < numOfMeals; i++) {
+		Meal meal(requeiredMeals.at(i));
+		cout << "Meal: " << meal.getName() << " | Price: " << meal.getPrice() << " | Total Orders: " << meal.getTotalOrders() << endl;
 	}
-	
 }

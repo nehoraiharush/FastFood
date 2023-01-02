@@ -1,7 +1,12 @@
 #pragma once
 #include <random>
+#include<iostream>
+#include <thread>
+#include <semaphore>
+
+#include "Timer.h"
+#include "Orderboard.h"
 #include "Menu.h"
-#include <iostream>
 
 using namespace std;
 
@@ -12,9 +17,14 @@ private:
 	int id;
 	int sleep;
 	int readMenu;
-
+	thread th;
+	Timer& timer;
+	Orderboard& orderboard;
+	Menu& menu;
+	void tryOrder();
 public:
-	Customer();
+	Customer(binary_semaphore&, Timer&, Orderboard&, Menu&);
 	~Customer();
 	int getSleep();
+	void start(binary_semaphore&);
 };

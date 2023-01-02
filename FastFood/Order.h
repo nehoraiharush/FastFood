@@ -8,10 +8,10 @@ private:
 	int customerId;
 	int itemId;
 	int amount;
-	bool done;
+	bool finished;
 
 public:
-	Order(int customerId, int itemId, int amount):customerId(customerId), itemId(itemId), amount(amount), done(true){}
+	Order(int customerId, int itemId, int amount):customerId(customerId), itemId(itemId), amount(amount), finished(true){}
 	int getCustomerId() {
 		return customerId;
 	}
@@ -20,7 +20,10 @@ public:
 
 	int getAmount() { return amount; }
 
-	int isDone() { return done; }
+	int isFinished() { return finished; }
 
-	void finish() { done = true; }
+	void finish() { finished = true; }
+	bool operator == (const Order& other) const {
+		return customerId == other.customerId && itemId == other.itemId && amount == other.amount && finished == other.finished;
+	}
 };

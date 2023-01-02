@@ -10,5 +10,7 @@ private:
 
 public:
 	Menu(int);
-
+	void print()const;
+	int getNumOfMeals() const { return numOfMeals; }
+	vector<Meal> getMeals() { return requeiredMeals; }
 };

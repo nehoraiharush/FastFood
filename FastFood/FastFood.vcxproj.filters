@@ -30,6 +30,12 @@
     <ClInclude Include="Waiter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OrderBoard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Customer.cpp">
@@ -44,10 +50,13 @@
     <ClCompile Include="Meal.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="OrdersBoard.cpp">
+    <ClCompile Include="Waiter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Waiter.cpp">
+    <ClCompile Include="Timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OrderBoard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
