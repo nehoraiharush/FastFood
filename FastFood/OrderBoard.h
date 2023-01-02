@@ -14,10 +14,11 @@ private:
 public:
 	Orderboard(Menu&);
 	bool canOrder(int);
-	void orderDish(int, int, int);
-	bool hasUndoneOrders();
-	Order preformOrder();
+	void orderMeal(int, int, int);
+	bool hasUnFinishedOrders();
+	Order excuteOrder();
 	double getTotalPrice();
 	int getAmount();
+	list<Order> getOrders() { return orders; }
 };
 

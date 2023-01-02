@@ -15,8 +15,6 @@ class Customer
 private:
 	static int id_counter;
 	int id;
-	int sleep;
-	int readMenu;
 	thread th;
 	Timer& timer;
 	Orderboard& orderboard;

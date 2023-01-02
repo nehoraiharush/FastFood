@@ -15,8 +15,8 @@ public:
 	int getCustomerId() {
 		return customerId;
 	}
-
-	int getDishId() { return itemId; }
+	~Order() {}
+	int getMealId() { return itemId; }
 
 	int getAmount() { return amount; }
 

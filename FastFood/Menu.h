@@ -10,6 +10,7 @@ private:
 
 public:
 	Menu(int);
+	~Menu() { delete[] allMeals; requeiredMeals.clear(); }
 	void print()const;
 	int getNumOfMeals() const { return numOfMeals; }
 	vector<Meal> getMeals() { return requeiredMeals; }

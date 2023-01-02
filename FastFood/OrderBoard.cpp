@@ -10,14 +10,15 @@ bool Orderboard::canOrder(int customerId) {
 	return true;
 }
 
-void Orderboard::orderDish(int customerId, int dishId, int amount) {
-	if (canOrder(customerId) && dishId < menu.getNumOfMeals() && amount > 0) {
-		Order newOrder(customerId, dishId, amount);
+void Orderboard::orderMeal(int customerId, int mealId, int amount) {
+	if (canOrder(customerId) && mealId < menu.getNumOfMeals() && amount > 0) {
+		Order newOrder(customerId, mealId, amount);
 		orders.push_back(newOrder);
 	}
 }
 
-bool Orderboard::hasUndoneOrders() {
+bool Orderboard::hasUnFinishedOrders() {
+	cout << orders.size() << endl;
 	for (Order order : orders) {
 		if (!order.isFinished())
 			return true;
@@ -25,15 +26,14 @@ bool Orderboard::hasUndoneOrders() {
 	return false;
 }
 
-Order Orderboard::preformOrder() {
+Order Orderboard::excuteOrder() {
 	for (Order& order : orders) {
 		if (!order.isFinished()) {
 			order.finish();
-			menu.getMeals()[order.getDishId()].addOrders(order.getAmount());
+			menu.getMeals()[order.getMealId()].addOrders(order.getAmount());
 			Order orderCopy(order);
 			itemCount += order.getAmount();
-			totalPrice += order.getAmount() * menu.getMeals()[order.getDishId()].getPrice();
-			orders.remove(order);
+			totalPrice += order.getAmount() * menu.getMeals()[order.getMealId()].getPrice();
 			return orderCopy;
 		}
 	}

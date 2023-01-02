@@ -16,7 +16,7 @@ Meal Menu::allMeals[7] = {
 Menu::Menu(int num_of_meals) {
 	if (num_of_meals > 7) {
 		cout << "Error: There aren't enough meals only up to 7" << endl;
-		return;
+		exit(EXIT_FAILURE);
 	}
 	numOfMeals = num_of_meals;
 	
